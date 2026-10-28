@@ -1,12 +1,12 @@
+using SpaceShuttleCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-using SpaceShuttle.Core;
 
-namespace SpaceShuttle.Diagnostics
+namespace SpaceShuttleDiagnostics
 {
     #region Частичный метод
 
@@ -21,18 +21,18 @@ namespace SpaceShuttle.Diagnostics
             Console.ResetColor();
         }
 
-    #endregion
+        #endregion
 
         #region Методы
 
-        private void CheckSystems(double _fuelKg, int _hullIntegrity, string systemName, string message)
+        public void CheckSystems(double fuelKg, int hullIntegrity, string systemName, string message)
         {
-            if (_fuelKg < 500)
+            if (fuelKg < 500)
             {
                 OnCriticalSystemAlert("Топливная система", "Критический остаток топлива!");
             }
 
-            if (_hullIntegrity < 25)
+            if (hullIntegrity < 25)
             {
                 OnCriticalSystemAlert("Контур обшивки", "Опасность разрушения корпуса!");
             }
@@ -40,12 +40,7 @@ namespace SpaceShuttle.Diagnostics
 
         public void PrintTelemetry()
         {
-            Console.WriteLine("Текущие параметры коробля: ");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
+            Designer designer = new Designer();
         }
 
         #endregion
