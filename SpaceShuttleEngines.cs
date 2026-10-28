@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShuttle.Engines
+namespace SpaceShuttleEngines
 {
     public partial class SpaceShuttle
     {
@@ -12,10 +12,10 @@ namespace SpaceShuttle.Engines
         {
             double flue = burnTimeSeconds * thrustPower * 2.5;
 
-            if (flue < 0) Console.WriteLine("Топливо недостаточно!"); 
+            if (flue < 0) Console.WriteLine("Топливо недостаточно!");
 
-            else if (flue > 0 && flue >= 50) 
-            { 
+            else if (flue > 0 && flue >= 50)
+            {
                 flue = flue - 50;
                 hullIntegrity = hullIntegrity * 0.1;
 
@@ -27,23 +27,22 @@ namespace SpaceShuttle.Engines
             else Console.WriteLine("Топливо недостаточно для пуска");
 
 
-            
+
 
         }
 
-        private double PerformAtmosphericEntry(int hullIntegrity, double oxygenHours)
+        private double PerformAtmosphericEntry(int hullIntegrity, double OxygenHours)
         {
             Random rnd = new Random();
 
-            hullIntegrity = rnd.Next(10,26);
+            hullIntegrity = rnd.Next(3, 11);
             Console.WriteLine($"Прочность снизилась на {hullIntegrity}");
 
-            oxygenHours = rnd.Next(3000, 5000);
-            oxygenHours = oxygenHours - 1.5;
+            OxygenHours = OxygenHours - 1.5;
 
             return hullIntegrity;
         }
     }
 
-    
+
 }
