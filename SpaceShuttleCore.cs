@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpaceShuttle.Core
+namespace SpaceShuttleCore
 {
     public partial class SpaceShuttle
     {
@@ -45,25 +45,30 @@ namespace SpaceShuttle.Core
 
         #endregion
 
-        #region Конструктор
+    }
 
-        class Character
+    public class Designer
+    {
+        public string ShuttleName { get; set; }
+        public double FuelKg { get; set; }
+        public double OxygenHours { get; set; }
+        public int HullIntegrity { get; set; }
+
+        public Designer()
         {
-            public string ShuttleName { get; set; }
-            public double FuelKg { get; set; }
-            public double OxygenHours { get; set; }
-            public int HullIntegrity { get; set; }
-
-            public Character(string name, double _fuelKg, double _oxygenHours, int _hullIntegrity)
-            {
-               this.ShuttleName = name;
-               this.FuelKg = _fuelKg;
-               this.OxygenHours = _oxygenHours;
-               this.HullIntegrity = _hullIntegrity;
-            }
-
+            ShuttleName = "Буран-Next";
+            FuelKg = 2400.0;
+            OxygenHours = 48.0;
+            HullIntegrity = 100;
         }
 
-        #endregion
+        public Designer(string name, double _fuelKg, double _oxygenHours, int _hullIntegrity)
+        {
+            this.ShuttleName = name;
+            this.FuelKg = _fuelKg;
+            this.OxygenHours = _oxygenHours;
+            this.HullIntegrity = _hullIntegrity;
+        }
+
     }
 }
